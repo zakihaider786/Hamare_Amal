@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Qibla Direction Compass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://www.transparenttextures.com/patterns/diamond-squares.png');
+            background-size: 200px;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        #get-location {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #get-location:hover {
+            background: #45a049;
+        }
+
+        #qibla-direction {
+            font-size: 20px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        #compass {
+            width: 150px;
+            height: 150px;
+            border: 10px solid #ddd;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #needle {
+            position: absolute;
+            width: 2px;
+            height: 60%;
+            background-color: red;
+            top: 20%;
+            left: 50%;
+            transform-origin: 50% 100%;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Qibla Direction Compass</h1>
+        <button id="get-location">Get Qibla Direction</button>
+        <div id="qibla-direction">Press the button to find the Qibla</div>
+        <div id="compass">
+            <div id="needle"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mecca (Kaaba) coordinates
+        const KAABA_LAT = 21.4225;
+        const KAABA_LON = 39.8262;
+        let qiblaDirection = null;
+
+        // Button to get location and calculate Qibla
+        document.getElementById('get-location').addEventListener('click', getLocation);
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            const userLat = position.coords.latitude;
+            const userLon = position.coords.longitude;
+            qiblaDirection = calculateQiblaDirection(userLat, userLon, KAABA_LAT, KAABA_LON);
+            document.getElementById('qibla-direction').innerHTML = `Qibla direction: ${qiblaDirection.toFixed(2)}° from North`;
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Permission to access location was denied.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+
+        function calculateQiblaDirection(lat1, lon1, lat2, lon2) {
+            const φ1 = toRadians(lat1);
+            const φ2 = toRadians(lat2);
+            const Δλ = toRadians(lon2 - lon1);
+            const y = Math.sin(Δλ) * Math.cos(φ2);
+            const x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+            const θ = Math.atan2(y, x);
+            return (toDegrees(θ) + 360) % 360;
+        }
+
+        function toRadians(degrees) {
+            return degrees * Math.PI / 180;
+        }
+
+        function toDegrees(radians) {
+            return radians * 180 / Math.PI;
+        }
+
+        // Use DeviceOrientation API to rotate compass needle based on device orientation
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener("deviceorientation", function(event) {
+                if (qiblaDirection !== null) {
+                    // Device heading in degrees (0 to 360)
+                    const deviceHeading = event.alpha;
+                    if (deviceHeading !== null) {
+                        const needleRotation = qiblaDirection - deviceHeading;
+                        document.getElementById('needle').style.transform = `rotate(${needleRotation}deg)`;
+                    }
+                }
+            }, true);
+        } else {
+            alert("Device orientation is not supported by this browser.");
+        }
+    </script>
+</body>
+</html>
