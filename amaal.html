@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyarat</title>
+    <title>Amaal</title>
     <style>
         * {
             margin: 0;
@@ -144,12 +144,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Ziyarat</h1>
+        <h1>Amaal</h1>
 
         <!-- Search Bar -->
         <div class="search-container">
-            <input type="text" id="search" placeholder="Search Ziyarat...">
-            <button onclick="searchZiyarat()">Search</button>
+            <input type="text" id="search" placeholder="Search Amaal...">
+            <button onclick="searchAmaal()">Search</button>
         </div>
         <div class="box-grid">
             <a href="muharram-amaal.html" class="box"><i class="fas fa-calendar"></i> Muharram</a>
@@ -160,7 +160,7 @@
         </div>
     </div>
     <script>
-        function searchZiyarat() {
+        function searchAmaal() {
             const searchQuery = document.getElementById('search').value.toLowerCase();
             const boxes = document.querySelectorAll('.box');
             boxes.forEach(box => {
