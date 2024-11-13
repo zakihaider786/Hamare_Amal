@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Hadith</title>
+    <title>Specific Duas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -41,6 +41,52 @@
             letter-spacing: 2px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
+
+        /* Premium Search Bar Styling */
+        .search-bar {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 15px;
+            font-size: 1.2rem;
+            width: 350px;
+            border: 2px solid #f0c14b;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input[type="text"]:focus {
+            border-color: #f7b500;
+            box-shadow: 0 0 8px rgba(247, 181, 0, 0.8);
+        }
+
+        .search-bar button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: #f7b500;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-bar button:hover {
+            background-color: #d69e00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
 
         .box-grid {
             display: grid;
@@ -133,7 +179,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>All Hadith</h1>
+        <h1>Specific Duas</h1>
+        <!-- Premium Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for a Hadith..." />
+            <button onclick="searchHadith()">Search</button>
+        </div>
+        
         <div class="box-grid">
             <a href="#" class="box"><i class="fas fa-praying-hands"></i> To get married</a>
             <a href="#" class="box"><i class="fas fa-praying-hands"></i> Spouse selection proposals</a>
@@ -205,5 +257,21 @@
             <a href="#" class="box"><i class="fas fa-praying-hands"></i> Talqeen (prompting the dead)</a>
         </div>        
     </div>
+
+     <script>
+        function searchHadith() {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            const boxes = document.querySelectorAll('.box');
+            
+            boxes.forEach(box => {
+                const text = box.textContent.toLowerCase();
+                if (text.includes(searchQuery)) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
