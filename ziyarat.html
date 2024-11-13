@@ -13,7 +13,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: url('hadith.jpg') no-repeat center center fixed;
+            background: url('images/hadith.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -87,7 +87,7 @@
         }
 
         /* Mobile adjustments */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             h1 {
                 font-size: 2rem;
             }
@@ -96,27 +96,6 @@
                 padding: 20px;
                 font-size: 1rem;
             }
-
-            .box-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .box {
-                padding: 15px;
-                font-size: 0.9rem;
-            }
-
-            .box-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
         }
     </style>
 </head>
@@ -124,7 +103,6 @@
     <div class="container">
         <h1>Ziyarat</h1>
         <div class="box-grid">
-            <div class="box">Ziyarat Waritha (AS)</div>
             <div class="box">Ziyarat of Lady Ummul Banin (AS)</div>
             <div class="box">Ziyarat of Bibi Fatimah (AS) – Madinatul Munawwarah</div>
             <div class="box">Ziyarat of Imam Musa Kazim (AS)</div>
@@ -161,6 +139,7 @@
             <div class="box">Ziyarat of the 14 Infallibles (Ahlul Bayt)</div>
             <div class="box">Ziyarat of the Companions of Karbala</div>
             <div class="box">Ziyarat of the Martyrs of Uhud</div>
+            <div class="box">Ziyarat Waritha (AS)</div> <!-- New addition -->
         </div>
     </div>
 </body>
