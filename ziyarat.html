@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyarat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/hadith.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .box {
+            background-color: rgba(255, 215, 0, 0.9); /* Slightly transparent yellow */
+            color: #333;
+            padding: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            transition: 0.3s;
+            opacity: 0;
+            transform: scale(1.3);
+        }
+
+        .box:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .box {
+                padding: 20px;
+                font-size: 1rem;
+            }
+
+            .box-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .box {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .box-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ziyarat</h1>
+        <div class="box-grid">
+            <div class="box">Ziyarat of Lady Ummul Banin (AS)</div>
+            <div class="box">Ziyarat of Bibi Fatimah (AS) – Madinatul Munawwarah</div>
+            <div class="box">Ziyarat of Imam Musa Kazim (AS)</div>
+            <div class="box">Ziyarat of Imam Ali (AS) on Fridays</div>
+            <div class="box">Ziyarat of Imam Hassan (AS)</div>
+            <div class="box">Ziyarat of the Prophet's Companions (AS)</div>
+            <div class="box">Ziyarat of Sayyida Nisa Ahlul Janna (AS)</div>
+            <div class="box">Ziyarat of Imam Mahdi (AS) – On Fridays</div>
+            <div class="box">Ziyarat of Imam Ali (AS) on Eid al-Ghadeer</div>
+            <div class="box">Ziyarat of Imam Hasan (AS) on 15th of Ramadhan</div>
+            <div class="box">Ziyarat of Imam Husayn (AS) on the Day of Ashura</div>
+            <div class="box">Ziyarat of Al-Kadhimayn (AS)</div>
+            <div class="box">Ziyarat of the Shrine of Bibi Zaynab (AS)</div>
+            <div class="box">Ziyarat of the Martyrs of Karbala</div>
+            <div class="box">Ziyarat of Imam Reza (AS)</div>
+            <div class="box">Ziyarat of the Prophet's Family (AS)</div>
+            <div class="box">Ziyarat of the Companions of Imam Husayn (AS)</div>
+            <div class="box">Ziyarat of Imam Ali Naqi (AS) on 7th of Safar</div>
+            <div class="box">Ziyarat of Hazrat Abbas (AS)</div>
+            <div class="box">Ziyarat of Imam Ali (AS) on 21st of Ramadhan</div>
+            <div class="box">Ziyarat of the Three Immortals (Imam Ali, Imam Husayn, and Imam Mahdi)</div>
+            <div class="box">Ziyarat of the Martyrs of Uhud</div>
+            <div class="box">Ziyarat of Imam Zaynul Abidin (AS)</div>
+            <div class="box">Ziyarat of Imam Muhammad Baqir (AS) on 7th of Rajab</div>
+            <div class="box">Ziyarat of Imam Hasan Askari (AS)</div>
+            <div class="box">Ziyarat of Prophet Ibrahim (AS) and Prophet Ismail (AS)</div>
+            <div class="box">Ziyarat of the 12 Imams (AS)</div>
+            <div class="box">Ziyarat of the Imams of the Ahlul Bayt (AS) on Eid al-Fitr</div>
+            <div class="box">Ziyarat of Sayyidah Ma'sumah (AS) in Qom</div>
+            <div class="box">Ziyarat of Sayyidah Zainab (AS) on 15th of Rajab</div>
+            <div class="box">Ziyarat Ashura</div>
+            <div class="box">Ziyarat Arbaeen</div>
+            <div class="box">Ziyarat of Ahlul Bayt (AS)</div>
+            <div class="box">Ziyarat of the 14 Infallibles (Ahlul Bayt)</div>
+            <div class="box">Ziyarat of the Companions of Karbala</div>
+            <div class="box">Ziyarat of the Martyrs of Uhud</div>
+        </div>
+    </div>
+</body>
+</html>
