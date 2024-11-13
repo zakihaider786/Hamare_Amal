@@ -260,12 +260,11 @@
 
      <script>
         function searchHadith() {
-            const searchQuery = document.getElementById('search').value.toLowerCase();
+            const query = document.getElementById('search').value.toLowerCase();
             const boxes = document.querySelectorAll('.box');
-            
             boxes.forEach(box => {
                 const text = box.textContent.toLowerCase();
-                if (text.includes(searchQuery)) {
+                if (text.includes(query)) {
                     box.style.display = 'block';
                 } else {
                     box.style.display = 'none';
