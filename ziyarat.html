@@ -190,7 +190,7 @@
         <!-- Premium Search Bar -->
         <div class="search-bar">
             <input type="text" id="search" placeholder="Search for a Ziyarat..." />
-            <button onclick="searchHadith()">Search</button>
+            <button onclick="searchZiyarat()">Search</button>
         </div>
         <div class="box-grid">
             <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Lady Ummul Banin (AS)</a>
@@ -230,14 +230,14 @@
     </div>
     <script>
         function searchZiyarat() {
-            const searchQuery = document.getElementById('search').value.toLowerCase();
-            const boxes = document.querySelectorAll('.box');
-            boxes.forEach(box => {
-                const text = box.textContent.toLowerCase();
-                if (text.includes(searchQuery)) {
-                    box.style.display = 'block';
+            let input = document.getElementById("search").value.toLowerCase();
+            let boxes = document.querySelectorAll(".box");
+            boxes.forEach(function(box) {
+                let text = box.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    box.style.display = "block";
                 } else {
-                    box.style.display = 'none';
+                    box.style.display = "none";
                 }
             });
         }
