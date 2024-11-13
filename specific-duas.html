@@ -189,9 +189,9 @@
         <h1>Specific Duas</h1>
         <!-- Premium Search Bar -->
         <div class="search-bar">
-            <input type="text" id="search" placeholder="Search for a Duas..." />
-            <button onclick="searchSpecific Duas()">Search</button>
-        </div>
+            <input type="text" id="search" placeholder="Search for a Duas..." aria-label="Search for a Duas"/>
+            <button onclick="searchSpecificDuas()" aria-label="Search Button">Search</button>
+       </div>
         <div class="box-grid">
             <a href="#" class="box"><i class="fas fa-praying-hands"></i> To get married</a>
             <a href="#" class="box"><i class="fas fa-praying-hands"></i> Spouse selection proposals</a>
@@ -264,19 +264,18 @@
         </div>        
     </div>
 
-     <script>
-        function searchSpecific Duas() {
-            const query = document.getElementById('search').value.toLowerCase();
-            const boxes = document.querySelectorAll('.box');
-            boxes.forEach(box => {
-                const text = box.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    box.style.display = 'block';
-                } else {
-                    box.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+    <script>
+    function searchSpecificDuas() {
+        let searchQuery = document.getElementById('search').value.toLowerCase();
+        let boxes = document.querySelectorAll('.box');
+        
+        boxes.forEach(box => {
+            let boxText = box.textContent.toLowerCase();
+            if (boxText.includes(searchQuery)) {
+                box.style.display = "block"; // Show matching boxes
+            } else {
+                box.style.display = "none"; // Hide non-matching boxes
+            }
+        });
+    }
+</script>
