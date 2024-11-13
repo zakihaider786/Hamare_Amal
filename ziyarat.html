@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyarat</title>
+    <title>Specific Duas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,7 +14,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: url('ziyarat.jpg') no-repeat center center fixed;
+            background: url('hadith.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -41,32 +42,50 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .search-container {
-            margin-bottom: 20px;
+        /* Premium Search Bar Styling */
+        .search-bar {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;  /* Ensure input and button wrap on smaller screens */
         }
 
-        .search-container input {
-            width: 80%;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .search-bar input[type="text"] {
+            padding: 15px;
+            font-size: 1.2rem;
+            width: 350px; /* Set a default width for larger screens */
+            border: 2px solid #f0c14b;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), inset 2px 2px 5px rgba(255, 255, 255, 0.3);
             outline: none;
-            margin-right: 10px;
+            transition: all 0.3s ease;
         }
 
-        .search-container button {
-            padding: 10px 15px;
+        .search-bar input[type="text"]:focus {
+            border-color: #f7b500;
+            box-shadow: 0 0 8px rgba(247, 181, 0, 0.8);
+        }
+
+        .search-bar button {
+            padding: 12px 20px;
             font-size: 1rem;
-            background-color: #333;
+            background-color: #f7b500;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .search-container button:hover {
-            background-color: #555;
+        .search-bar button:hover {
+            background-color: #d69e00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .box-grid {
@@ -88,16 +107,7 @@
             cursor: pointer;
             overflow: hidden;
             position: relative;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .box i {
-            font-size: 1.5rem;
-            color: #555;
+            text-decoration: none; /* Remove underline */
         }
 
         .box:hover {
@@ -124,8 +134,15 @@
             transform: scale(1);
         }
 
+        .box i {
+            display: block;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
         /* Mobile adjustments */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
@@ -135,21 +152,45 @@
                 font-size: 1rem;
             }
 
-            .search-container input {
-                width: 70%;
+            .box-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .search-bar input[type="text"] {
+                width: 100%; /* Full width for input on mobile */
+                max-width: 100%; /* Ensure it doesn't overflow */
+                margin-bottom: 10px; /* Add margin for spacing */
+            }
+
+            .search-bar button {
+                width: 100%; /* Full width for button on mobile */
+                margin-left: 0; /* Remove margin on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .box {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .box-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Ziyarat</h1>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search Ziyarat...">
-            <button onclick="searchZiyarat()">Search</button>
+        <h1>Specific Duas</h1>
+        <!-- Premium Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for a Hadith..." />
+            <button onclick="searchHadith()">Search</button>
         </div>
         <div class="box-grid">
             <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Lady Ummul Banin (AS)</a>
