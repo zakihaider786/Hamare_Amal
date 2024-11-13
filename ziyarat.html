@@ -27,7 +27,7 @@
             padding: 20px;
             max-width: 1200px;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -48,7 +48,7 @@
         }
 
         .box {
-            background-color: rgba(255, 215, 0, 0.9); /* Slightly transparent yellow */
+            background-color: rgba(255, 215, 0, 0.9);
             color: #333;
             padding: 30px;
             font-size: 1.2rem;
@@ -60,6 +60,16 @@
             cursor: pointer;
             overflow: hidden;
             position: relative;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .box i {
+            font-size: 1.5rem;
+            color: #555;
         }
 
         .box:hover {
@@ -98,44 +108,45 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>Ziyarat</h1>
         <div class="box-grid">
-            <a href="#" class="box">Ziyarat of Lady Ummul Banin (AS)</a>
-            <a href="#" class="box">Ziyarat of Bibi Fatimah (AS) – Madinatul Munawwarah</a>
-            <a href="#" class="box">Ziyarat of Imam Musa Kazim (AS)</a>
-            <a href="#" class="box">Ziyarat of Imam Ali (AS) on Fridays</a>
-            <a href="#" class="box">Ziyarat of Imam Hassan (AS)</a>
-            <a href="#" class="box">Ziyarat of the Prophet's Companions (AS)</a>
-            <a href="#" class="box">Ziyarat of Sayyida Nisa Ahlul Janna (AS)</a>
-            <a href="#" class="box">Ziyarat of Imam Mahdi (AS) – On Fridays</a>
-            <a href="#" class="box">Ziyarat of Imam Ali (AS) on Eid al-Ghadeer</a>
-            <a href="#" class="box">Ziyarat of Imam Hasan (AS) on 15th of Ramadhan</a>
-            <a href="#" class="box">Ziyarat of Imam Husayn (AS) on the Day of Ashura</a>
-            <a href="#" class="box">Ziyarat of Al-Kadhimayn (AS)</a>
-            <a href="#" class="box">Ziyarat of the Shrine of Bibi Zaynab (AS)</a>
-            <a href="#" class="box">Ziyarat of the Martyrs of Karbala</a>
-            <a href="#" class="box">Ziyarat of Imam Reza (AS)</a>
-            <a href="#" class="box">Ziyarat of the Prophet's Family (AS)</a>
-            <a href="#" class="box">Ziyarat of the Companions of Imam Husayn (AS)</a>
-            <a href="#" class="box">Ziyarat of Imam Ali Naqi (AS) on 7th of Safar</a>
-            <a href="#" class="box">Ziyarat of Hazrat Abbas (AS)</a>
-            <a href="#" class="box">Ziyarat of Imam Ali (AS) on 21st of Ramadhan</a>
-            <a href="#" class="box">Ziyarat of the Three Immortals (Imam Ali, Imam Husayn, and Imam Mahdi)</a>
-            <a href="#" class="box">Ziyarat of the Martyrs of Uhud</a>
-            <a href="#" class="box">Ziyarat of Imam Zaynul Abidin (AS)</a>
-            <a href="#" class="box">Ziyarat of Imam Muhammad Baqir (AS) on 7th of Rajab</a>
-            <a href="#" class="box">Ziyarat of Imam Hasan Askari (AS)</a>
-            <a href="#" class="box">Ziyarat of Prophet Ibrahim (AS) and Prophet Ismail (AS)</a>
-            <a href="#" class="box">Ziyarat of the 12 Imams (AS)</a>
-            <a href="#" class="box">Ziyarat of the Imams of the Ahlul Bayt (AS) on Eid al-Fitr</a>
-            <a href="#" class="box">Ziyarat of Sayyidah Ma'sumah (AS) in Qom</a>
-            <a href="#" class="box">Ziyarat of Sayyidah Zainab (AS) on 15th of Rajab</a>
-            <a href="#" class="box">Ziyarat Ashura</a>
-            <a href="#" class="box">Ziyarat Arbaeen</a>
-            <a href="#" class="box">Ziyarat Waritha (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Lady Ummul Banin (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Bibi Fatimah (AS) – Madinatul Munawwarah</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Musa Kazim (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Ali (AS) on Fridays</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Hassan (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Prophet's Companions (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Sayyida Nisa Ahlul Janna (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Mahdi (AS) – On Fridays</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Ali (AS) on Eid al-Ghadeer</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Hasan (AS) on 15th of Ramadhan</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Husayn (AS) on the Day of Ashura</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Al-Kadhimayn (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Shrine of Bibi Zaynab (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Martyrs of Karbala</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Reza (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Prophet's Family (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Companions of Imam Husayn (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Ali Naqi (AS) on 7th of Safar</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Hazrat Abbas (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Ali (AS) on 21st of Ramadhan</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Three Immortals (Imam Ali, Imam Husayn, and Imam Mahdi)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Martyrs of Uhud</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Zaynul Abidin (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Muhammad Baqir (AS) on 7th of Rajab</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Imam Hasan Askari (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Prophet Ibrahim (AS) and Prophet Ismail (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the 12 Imams (AS)</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of the Imams of the Ahlul Bayt (AS) on Eid al-Fitr</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Sayyidah Ma'sumah (AS) in Qom</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat of Sayyidah Zainab (AS) on 15th of Rajab</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat Ashura</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat Arbaeen</a>
+            <a href="#" class="box"><i class="fas fa-mosque"></i> Ziyarat Waritha (AS)</a>
         </div>
     </div>
 </body>
