@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Hadith</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/hadith.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .box {
+            background-color: rgba(255, 215, 0, 0.9);
+            color: #333;
+            padding: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            transition: 0.3s;
+            opacity: 0;
+            transform: scale(1.3);
+        }
+
+        .box:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .box i {
+            display: block;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .box {
+                padding: 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>All Hadith</h1>
+        <div class="box-grid">
+            <div class="box"><i class="fas fa-book"></i> Ali ibn Abi Talib</div>
+            <div class="box"><i class="fas fa-book"></i> Hasan ibn Ali</div>
+            <div class="box"><i class="fas fa-book"></i> Husayn ibn Ali</div>
+            <div class="box"><i class="fas fa-book"></i> Ali ibn Husayn</div>
+            <div class="box"><i class="fas fa-book"></i> Muhammad al-Baqir</div>
+            <div class="box"><i class="fas fa-book"></i> Jafar al-Sadiq</div>
+            <div class="box"><i class="fas fa-book"></i> Musa al-Kadhim</div>
+            <div class="box"><i class="fas fa-book"></i> Ali al-Rida</div>
+            <div class="box"><i class="fas fa-book"></i> Muhammad al-Jawad</div>
+            <div class="box"><i class="fas fa-book"></i> Ali al-Hadi</div>
+            <div class="box"><i class="fas fa-book"></i> Hasan al-Askari</div>
+            <div class="box"><i class="fas fa-book"></i> Muhammad al-Mahdi</div>
+        </div>
+    </div>
+</body>
+</html>
