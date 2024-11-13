@@ -1,0 +1,38 @@
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Show loading state
+        document.querySelector(".submit-btn").disabled = true;
+        document.querySelector(".submit-btn").innerText = "Submitting...";
+
+        // Get form data
+        const formData = new FormData(this);
+
+        // Make the API request
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success popup
+                document.getElementById("popup").style.display = "block";
+                setTimeout(function () {
+                    document.getElementById("popup").style.display = "none";
+                }, 3000);
+            } else {
+                alert("Submission failed. Please try again.");
+            }
+        })
+        .catch(error => {
+            alert("An error occurred. Please try again.");
+        })
+        .finally(() => {
+            // Reset button and enable it again
+            document.querySelector(".submit-btn").disabled = false;
+            document.querySelector(".submit-btn").innerText = "Submit";
+        });
+    });
+</script>
