@@ -1,38 +1,243 @@
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-        
-        // Show loading state
-        document.querySelector(".submit-btn").disabled = true;
-        document.querySelector(".submit-btn").innerText = "Submitting...";
+<!DOCTYPE html>
+<html lang="en">
 
-        // Get form data
-        const formData = new FormData(this);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        // Make the API request
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Show success popup
-                document.getElementById("popup").style.display = "block";
-                setTimeout(function () {
-                    document.getElementById("popup").style.display = "none";
-                }, 3000);
-            } else {
-                alert("Submission failed. Please try again.");
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            background-image: url('images/contact.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9); /* Slight transparency for elegance */
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
             }
-        })
-        .catch(error => {
-            alert("An error occurred. Please try again.");
-        })
-        .finally(() => {
-            // Reset button and enable it again
-            document.querySelector(".submit-btn").disabled = false;
-            document.querySelector(".submit-btn").innerText = "Submit";
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field label {
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .input-field input,
+        .input-field textarea {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .input-field input:focus,
+        .input-field textarea:focus {
+            border-color: #00c6ff;
+        }
+
+        .input-field textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .input-field input:focus + label,
+        .input-field textarea:focus + label {
+            top: -22px;
+            font-size: 0.9rem;
+            color: #00c6ff;
+        }
+
+        .submit-btn {
+            background-color: #00c6ff;
+            color: white;
+            font-size: 1.2rem;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #0072ff;
+            transform: translateY(-3px);
+        }
+
+        .submit-btn:active {
+            background-color: #005bb5;
+            transform: translateY(2px);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            z-index: 9999;
+        }
+
+        .popup h2 {
+            font-size: 1.5rem;
+            color: #00c6ff;
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: #00c6ff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button:hover {
+            background-color: #0072ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Contact Form Container -->
+    <div class="form-container">
+        <h1>Contact Us</h1>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="409c3031-0578-4c49-bec8-706e6331c2cc">
+
+            <!-- Name -->
+            <div class="input-field">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Full Name</label>
+            </div>
+
+            <!-- Email -->
+            <div class="input-field">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email Address</label>
+            </div>
+
+            <!-- Message -->
+            <div class="input-field">
+                <textarea id="message" name="message" required></textarea>
+                <label for="message">Your Message</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="popup" id="popup">
+        <h2>Thank You!</h2>
+        <p>Your message has been successfully sent.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Show loading state
+            document.querySelector(".submit-btn").disabled = true;
+            document.querySelector(".submit-btn").innerText = "Submitting...";
+    
+            // Get form data
+            const formData = new FormData(this);
+    
+            // Make the API request
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success popup
+                    document.getElementById("popup").style.display = "block";
+                    setTimeout(function () {
+                        document.getElementById("popup").style.display = "none";
+                    }, 3000);
+                } else {
+                    alert("Submission failed. Please try again.");
+                }
+            })
+            .catch(error => {
+                alert("An error occurred. Please try again.");
+            })
+            .finally(() => {
+                // Reset button and enable it again
+                document.querySelector(".submit-btn").disabled = false;
+                document.querySelector(".submit-btn").innerText = "Submit";
+            });
         });
-    });
-</script>
+    </script>
+    
+
+</body>
+
+</html>
