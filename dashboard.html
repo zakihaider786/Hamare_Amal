@@ -125,44 +125,123 @@
       background-color: #e60000;
     }
 
+    /* Chatbot Icon */
+    #chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4070f4;
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #chatbot-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+     /* Chatbot Styles */
+     #chatbot-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #chatbot-btn img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.2s;
+    }
+
+    #chatbot-btn:hover img {
+      transform: scale(1.2);
+    }
+
+    #chatbot-window {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    #chatbot-header {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #chatbot-messages {
+      padding: 15px;
+      height: 300px;
+      overflow-y: auto;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    #chatbot-input-container {
+      display: flex;
+      padding: 10px;
+      background-color: #f9f9f9;
+      justify-content: space-between;
+    }
+
+    #chatbot-input {
+      width: 80%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    #chatbot-send {
+      width: 15%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #chatbot-send:hover {
+      background-color: #45a049;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
-      .dashboard-header h2 {
-        font-size: 24px;
-      }
-
-      .navbar {
-        flex-direction: column;
-        gap: 5px;
-        padding: 10px;
-      }
-
-      .navbar a, .navbar button {
-        font-size: 14px;
-        padding: 6px 10px;
-      }
-
-      .dashboard-content p {
-        font-size: 14px;
-      }
-
-      .option-card {
-        font-size: 16px;
-        padding: 15px;
+      #chatbot-window {
+        width: 250px;
       }
     }
 
     @media (max-width: 480px) {
-      .wrapper {
-        padding: 15px;
-      }
-
-      .dashboard-header h2 {
-        font-size: 20px;
-      }
-
-      .dashboard-content p {
-        font-size: 14px;
+      #chatbot-window {
+        width: 200px;
       }
     }
   </style>
@@ -228,19 +307,47 @@
     </div>
   </div>
 
+  <!-- Chatbot Floating Button -->
+  <div id="chatbot-btn" onclick="toggleChatbotWindow()">
+    <img src="chatbot-icon.png" alt="Chatbot Icon">
+  </div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-window">
+    <div id="chatbot-header">Chat with Ayaan</div>
+    <div id="chatbot-messages">
+      <p><strong>Ayaan:</strong> Hello! How can I assist you today?</p>
+    </div>
+    <div id="chatbot-input-container">
+      <input type="text" id="chatbot-input" placeholder="Type your message...">
+      <button id="chatbot-send" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
   <script>
-    // Check if the user is logged in by checking localStorage
-    let isLoggedIn = JSON.parse(localStorage.getItem('loggedIn'));
-    if (!isLoggedIn) {
-      alert("You need to log in to access the dashboard.");
-      window.location.href = "login.html";  // Redirect to login if not logged in
+    // Toggle the visibility of the chatbot window
+    function toggleChatbotWindow() {
+      const chatbotWindow = document.getElementById('chatbot-window');
+      chatbotWindow.style.display = (chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '') ? 'flex' : 'none';
     }
 
-    // Logout function to clear user session
-    function logout() {
-      localStorage.removeItem('loggedIn');
-      alert("You have logged out successfully.");
-      window.location.href = "login.html";  // Redirect to login page
+    // Send message to chatbot
+    function sendMessage() {
+      const inputField = document.getElementById('chatbot-input');
+      const messageContainer = document.getElementById('chatbot-messages');
+
+      if (inputField.value.trim() !== "") {
+        // Display user's message
+        messageContainer.innerHTML += `<p><strong>You:</strong> ${inputField.value}</p>`;
+        // Display chatbot's reply
+        messageContainer.innerHTML += `<p><strong>Ayaan:</strong> I'm here to help!</p>`;
+
+        // Scroll to the bottom of the chat window
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+
+        // Clear input field
+        inputField.value = '';
+      }
     }
   </script>
 </body>
