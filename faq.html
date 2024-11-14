@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Hamare Amal</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f7fb;
+      color: #333;
+      padding: 40px;
+      margin: 0;
+    }
+
+    /* Wrapper */
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    /* Page Title */
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    /* Accordion Button */
+    .accordion {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion:hover {
+      background-color: #0056b3;
+    }
+
+    .accordion:focus {
+      outline: none;
+    }
+
+    /* Accordion Answer */
+    .answer {
+      display: none;
+      padding: 20px;
+      background-color: #f7f7f7;
+      border-left: 4px solid #007bff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .wrapper {
+        padding: 30px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .accordion {
+        font-size: 16px;
+        padding: 18px;
+      }
+
+      .answer {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrapper {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .accordion {
+        font-size: 14px;
+        padding: 16px;
+      }
+
+      .answer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- FAQ Item 1 -->
+    <div class="faq-item">
+      <button class="accordion">How can I access Quran and Hadith content on Hamare Amal?</button>
+      <div class="answer">
+        <p>You can access the Quran, Hadith, and other Islamic resources by visiting the respective sections on our platform. Simply navigate through the menu to find the content you're looking for.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="faq-item">
+      <button class="accordion">Are the Duas and Amaal available for different occasions?</button>
+      <div class="answer">
+        <p>Yes, we provide a comprehensive collection of Duas and Amaal for various occasions such as Ramadan, Hajj, Eid, and everyday life. You can search for them on our site based on the occasion or specific needs.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="faq-item">
+      <button class="accordion">Do you provide guidance on Namaaz (prayer)?</button>
+      <div class="answer">
+        <p>Yes, we offer detailed guides and videos on how to perform Namaaz (prayer), including step-by-step instructions, dua recitations, and tips for improving your prayer.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 4 -->
+    <div class="faq-item">
+      <button class="accordion">Can I access the content for free?</button>
+      <div class="answer">
+        <p>Yes, all the content on Hamare Amal is available for free. We believe in providing valuable Islamic knowledge to everyone without any charges.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 5 -->
+    <div class="faq-item">
+      <button class="accordion">Is there a mobile app for Hamare Amal?</button>
+      <div class="answer">
+        <p>Currently, we do not have a mobile app, but our platform is fully mobile-responsive. You can access all the content through any mobile device's browser.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 6 -->
+    <div class="faq-item">
+      <button class="accordion">How can I search for specific Duas or Amaal?</button>
+      <div class="answer">
+        <p>You can use the search bar available on our website to search for specific Duas, Amaal, or any other content. Simply type the name or keywords related to the topic you're looking for.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 7 -->
+    <div class="faq-item">
+      <button class="accordion">Do you offer any courses or educational materials?</button>
+      <div class="answer">
+        <p>Yes, we offer various educational resources on Islamic studies, including articles, videos, and courses. These resources are designed to help you understand Islamic teachings better.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 8 -->
+    <div class="faq-item">
+      <button class="accordion">How can I contribute to Hamare Amal?</button>
+      <div class="answer">
+        <p>If you'd like to contribute content such as Duas, Amaal, or educational resources, you can contact us via the "Contact Us" page. We welcome contributions that align with our platform’s vision.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 9 -->
+    <div class="faq-item">
+      <button class="accordion">How do I reset my password?</button>
+      <div class="answer">
+        <p>If you've forgotten your password, click on the "Forgot Password" link on the login page to reset it. You will receive a reset link in your registered email.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 10 -->
+    <div class="faq-item">
+      <button class="accordion">How can I contact Hamare Amal for further inquiries?</button>
+      <div class="answer">
+        <p>You can contact us through the "Contact Us" page. We offer various ways to get in touch, including email, phone, and a contact form.</p>
+      </div>
+    </div>
+
+    <!-- Contact Us Link -->
+    <div class="text">
+      <p>Still have questions? <a href="contact.html">Contact us here</a> and we'll get back to you as soon as possible!</p>
+    </div>
+  </div>
+
+  <script>
+    // Accordion Functionality
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(accordion => {
+      accordion.addEventListener('click', () => {
+        const answer = accordion.nextElementSibling;
+
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
