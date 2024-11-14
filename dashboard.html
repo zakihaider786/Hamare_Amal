@@ -308,47 +308,111 @@
   </div>
 
   <!-- Chatbot Floating Button -->
-  <div id="chatbot-btn" onclick="toggleChatbotWindow()">
-    <img src="chatbot-icon.png" alt="Chatbot Icon">
+<div id="chatbot-btn" onclick="toggleChatbotWindow()">
+  <img src="chatbot-icon.png" alt="Chatbot Icon">
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbot-window">
+  <div id="chatbot-header">Chat with Ayaan</div>
+  <div id="chatbot-messages">
+    <p><strong>Ayaan:</strong> Hello! How can I assist you today?</p>
   </div>
-
-  <!-- Chatbot Window -->
-  <div id="chatbot-window">
-    <div id="chatbot-header">Chat with Ayaan</div>
-    <div id="chatbot-messages">
-      <p><strong>Ayaan:</strong> Hello! How can I assist you today?</p>
-    </div>
-    <div id="chatbot-input-container">
-      <input type="text" id="chatbot-input" placeholder="Type your message...">
-      <button id="chatbot-send" onclick="sendMessage()">Send</button>
-    </div>
+  <div id="chatbot-input-container">
+    <input type="text" id="chatbot-input" placeholder="Type your message...">
+    <button id="chatbot-send" onclick="sendMessage()">Send</button>
   </div>
+</div>
 
-  <script>
-    // Toggle the visibility of the chatbot window
-    function toggleChatbotWindow() {
-      const chatbotWindow = document.getElementById('chatbot-window');
-      chatbotWindow.style.display = (chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '') ? 'flex' : 'none';
-    }
+<script>
+  // Toggle the visibility of the chatbot window
+  function toggleChatbotWindow() {
+    const chatbotWindow = document.getElementById('chatbot-window');
+    chatbotWindow.style.display = (chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '') ? 'flex' : 'none';
+  }
 
-    // Send message to chatbot
-    function sendMessage() {
-      const inputField = document.getElementById('chatbot-input');
-      const messageContainer = document.getElementById('chatbot-messages');
+  // Send message to chatbot
+  function sendMessage() {
+    const inputField = document.getElementById('chatbot-input');
+    const messageContainer = document.getElementById('chatbot-messages');
+    const userMessage = inputField.value.trim().toLowerCase();
 
-      if (inputField.value.trim() !== "") {
-        // Display user's message
-        messageContainer.innerHTML += `<p><strong>You:</strong> ${inputField.value}</p>`;
-        // Display chatbot's reply
-        messageContainer.innerHTML += `<p><strong>Ayaan:</strong> I'm here to help!</p>`;
+    if (userMessage !== "") {
+      // Display user's message
+      messageContainer.innerHTML += `<p><strong>You:</strong> ${inputField.value}</p>`;
 
-        // Scroll to the bottom of the chat window
-        messageContainer.scrollTop = messageContainer.scrollHeight;
+      // Define answers to questions
+      let response = "Sorry, I didn't understand that.";
 
-        // Clear input field
-        inputField.value = '';
+      const answers = {
+        "what is hmaare amal?": "Hmaare Amal is an Islamic website offering Quranic verses, Hadith, Duas, and other Islamic resources for users.",
+        "how do i log in to the dashboard?": "To log in, enter your registered email and password on the login page.",
+        "can i access the quranic verses and hadith from the dashboard?": "Yes, the Quranic verses and Hadith are accessible through the dashboard.",
+        "what is nahjul balagha, and how can i access it on the website?": "Nahjul Balagha is a collection of sermons and letters by Imam Ali, accessible in the 'Books' section.",
+        "what are the different sections available on the dashboard?": "The dashboard includes sections for Quranic verses, Hadith, Duas, Ziyarat, and Amaal.",
+        "how can i contact support or get help with the website?": "You can contact support using the contact form on the 'Help' page.",
+        "what is the 'qibla location' feature, and how does it work?": "The 'Qibla Location' feature shows the direction of the Qibla based on your location using GPS.",
+        "is there any mobile app available for this website?": "Currently, there is no mobile app; access the website through your mobile browser.",
+        "how can i view or listen to the quranic verses on the website?": "Quranic verses can be viewed or listened to by clicking on the 'Quran' section.",
+        "can i save my favorite hadiths, duas, or quran verses for later access?": "Yes, you can save your favorites by clicking the 'Save' icon next to the content.",
+        "what is the purpose of the 'amaal' section on the dashboard?": "The 'Amaal' section provides a list of religious acts and rituals to perform.",
+        "how can i get information about specific duas for different occasions?": "Visit the 'Specific Duas' section to find Duas for various occasions.",
+        "what is the 'ziyarat' section, and how can it help me?": "The 'Ziyarat' section provides prayers and supplications for visiting holy shrines.",
+        "how do i use the contact form to get in touch with the support team?": "Fill out the required fields in the contact form and submit your query.",
+        "what kind of content is available in the 'specific duas' section?": "This section contains Duas for different occasions, needs, and supplications.",
+        "how do i logout of my account securely?": "Click the 'Logout' button located in the top-right corner of the dashboard.",
+        "can i access content offline, or do i need an internet connection?": "Content requires an internet connection, as the website is not available offline.",
+        "is the content on the website available in languages other than english?": "Yes, some content is available in multiple languages, including Arabic and Urdu.",
+        "how do i customize my profile or change my personal settings?": "Go to your profile settings to edit your personal information and preferences.",
+        "how can i get updates about new content or features on the website?": "You can subscribe to newsletters or enable notifications to receive updates.",
+        "how can i reset my password if i forget it?": "Click the 'Forgot Password' link on the login page to reset your password via email.",
+        "can i share content from the website with others?": "Yes, you can share content via social media or direct links.",
+        "is there a subscription fee to access the content on the website?": "Basic content is free, but some premium content may require a subscription.",
+        "what types of payment methods are accepted for any premium content or services?": "Payment methods include credit/debit cards and PayPal.",
+        "how often is new content added to the website?": "New content is added regularly, depending on availability and updates.",
+        "can i change my username after creating my account?": "No, usernames cannot be changed after account creation.",
+        "are there any community forums or discussion boards on the website?": "At the moment, there are no forums, but users can comment on specific content.",
+        "how can i delete my account on the website?": "To delete your account, contact support through the contact form.",
+        "what is the difference between the free and premium accounts?": "Premium accounts offer additional features, exclusive content, and no ads.",
+        "can i download content such as hadiths, duas, or quranic verses for offline reading?": "No, downloading content for offline use is not supported at this time.",
+        "are there any video tutorials available to help me navigate the website?": "Yes, video tutorials are available in the 'Help' section.",
+        "how can i rate or provide feedback on specific content or features?": "You can rate content or leave feedback through the 'Rate' button on each page.",
+        "can i follow specific authors, speakers, or scholars on the website?": "Yes, you can follow authors or scholars by clicking on their profile and subscribing.",
+        "how do i update my payment information for any subscriptions or purchases?": "You can update payment information in the 'Billing' section of your account settings.",
+        "is there any family or group plan available for multiple users?": "Yes, group plans are available for families or educational institutions.",
+        "can i request content to be added to the website, like specific duas or lectures?": "Yes, you can submit a request through the contact form for content suggestions.",
+        "how can i access the website in case of server downtime or maintenance?": "Visit the website’s social media for updates or use the offline app (if available).",
+        "does the website provide any certificates for completing certain courses or sections?": "Certificates are available for certain educational courses and programs on the website.",
+        "are there any age restrictions to access certain content on the website?": "There are no age restrictions, but some content may be more appropriate for adults.",
+        "can i print any of the content available on the website?": "Yes, you can print content directly from the website using the print option.",
+        "how do i report inappropriate or offensive content on the website?": "Use the 'Report' button next to the content to notify the website administrators.",
+        "can i access the website in dark mode or customize the appearance?": "Yes, you can enable dark mode and customize some visual settings in the profile.",
+        "is there a mobile version of the website for easier access?": "Yes, the website is fully optimized for mobile use.",
+        "how can i track my progress or history on the website?": "Your progress and history are tracked in the 'My Account' section.",
+        "can i share my progress or achievements on social media?": "Yes, you can share your achievements on social media directly from your profile.",
+        "how do i change the email address associated with my account?": "You can change your email address in the account settings section.",
+        "are there any discounts or promotions available for new users?": "Yes, new users may receive special offers or discounts via email or notifications.",
+        "how can i contact the website's developers or contribute to the platform?": "You can contact the development team through the 'Contact Us' page.",
+        "what should i do if i face issues with logging in or accessing content?": "Try resetting your password or contact support for further assistance.",
+        "how do i manage or organize my saved content, such as duas or hadiths?": "Manage saved content through the 'Saved Items' section in your account."
+      };
+
+      // Check if the message has a matching response
+      if (answers[userMessage]) {
+        response = answers[userMessage];
       }
+
+      // Display chatbot's reply
+      messageContainer.innerHTML += `<p><strong>Ayaan:</strong> ${response}</p>`;
+
+      // Scroll to the bottom of the chat window
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+
+      // Clear input field
+      inputField.value = '';
     }
-  </script>
+  }
+</script>
 </body>
 </html>
+
