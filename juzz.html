@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Phrases</title>
+    <!-- Font Awesome for Quran Icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('ziyarat.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #34495e;
+        }
+
+        .icon {
+            font-size: 2rem;
+            color: #16a085;
+            margin-right: 10px;
+        }
+
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .box {
+            background-color: rgba(255, 215, 0, 0.9);
+            color: #333;
+            padding: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .box i {
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 12px;
+            transition: 0.3s;
+            opacity: 0;
+            transform: scale(1.3);
+        }
+
+        .box:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .box {
+                padding: 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arabic Phrases</h1>
+        <h2>Click on any Arabic phrase</h2>
+        <div class="box-grid">
+            <!-- Alif Lam Meem -->
+            <a href="alif-lam-meem.html" class="box"><i class="fas fa-book"></i> آلم</a>
+            <!-- Sayaqulu -->
+            <a href="sayaqulu.html" class="box"><i class="fas fa-book"></i> سَيَقُولُ</a>
+            <!-- Tilka Ar-Rusulu -->
+            <a href="tilka-rusulu.html" class="box"><i class="fas fa-book"></i> الرُّسُلُ تِلْكَ</a>
+            <!-- Lan Tana Loo -->
+            <a href="lan-tana-loo.html" class="box"><i class="fas fa-book"></i> تَنَالُوا لَنْ</a>
+            <!-- Wal Mohsanat -->
+            <a href="wal-mohsanat.html" class="box"><i class="fas fa-book"></i> وَالْمُحْصَنَاتُ</a>
+            <!-- La Yuhibbullah -->
+            <a href="la-yuhibbullah.html" class="box"><i class="fas fa-book"></i> اللَّهُ يُحِبُّ لَا</a>
+            <!-- Wa Iza Samiu -->
+            <a href="wa-iza-samiu.html" class="box"><i class="fas fa-book"></i> سَمِعُوا وَإِذَا</a>
+            <!-- Wa Lau Annana -->
+            <a href="wa-lau-annana.html" class="box"><i class="fas fa-book"></i> أَنَّنَا وَلَوْ</a>
+            <!-- Qalal Malao -->
+            <a href="qalal-malao.html" class="box"><i class="fas fa-book"></i> الْمَلَأُ قَالَ</a>
+            <!-- Wa A'lamu -->
+            <a href="wa-alamu.html" class="box"><i class="fas fa-book"></i> وَاعْلَمُوا</a>
+            <!-- Yatazeroon -->
+            <a href="yatazeroon.html" class="box"><i class="fas fa-book"></i> يَعْتَذِرُونَ</a>
+            <!-- Wa Mamin Da'abat -->
+            <a href="wa-mamin-daabat.html" class="box"><i class="fas fa-book"></i> دَابَّةٍ مِنْ وَمَا</a>
+            <!-- Wa Ma Ubrioo -->
+            <a href="wa-ma-ubrioo.html" class="box"><i class="fas fa-book"></i> بَرِّئُوَمَا</a>
+            <!-- Rubama -->
+            <a href="rubama.html" class="box"><i class="fas fa-book"></i> رُبَمَا</a>
+            <!-- Subhanallazi -->
+            <a href="subhanallazi.html" class="box"><i class="fas fa-book"></i> الَّذِي سُبْحَانَ</a>
+            <!-- Qal Alam -->
+            <a href="qal-alam.html" class="box"><i class="fas fa-book"></i> أَلَمْ قَالَ</a>
+            <!-- Aqtarabo -->
+            <a href="aqtarabo.html" class="box"><i class="fas fa-book"></i> اقْتَرَبَ</a>
+            <!-- Qadd Aflaha -->
+            <a href="qadd-aflaha.html" class="box"><i class="fas fa-book"></i> أَفْلَحَ قَدْ</a>
+            <!-- Wa Qalallazina -->
+            <a href="wa-qalallazina.html" class="box"><i class="fas fa-book"></i> الَّذِينَ وَقَالَ</a>
+            <!-- A'man Khalaq -->
+            <a href="aman-khalaq.html" class="box"><i class="fas fa-book"></i> خَلَقَ أَمَّنْ</a>
+            <!-- Utlu Ma Oohi -->
+            <a href="utlu-ma-oohi.html" class="box"><i class="fas fa-book"></i> أُوحِيَ مَا اتْلُ</a>
+            <!-- Wamanyaknut -->
+            <a href="wamanyaknut.html" class="box"><i class="fas fa-book"></i> يَقْنُتْ وَمَنْ</a>
+            <!-- Wa Mali -->
+            <a href="wa-mali.html" class="box"><i class="fas fa-book"></i> لِيَ وَمَا</a>
+            <!-- Faman Azlam -->
+            <a href="faman-azlam.html" class="box"><i class="fas fa-book"></i> أَظْلَمُ فَمَنْ</a>
+            <!-- Elahe Yuruddo -->
+            <a href="elahe-yuruddo.html" class="box"><i class="fas fa-book"></i> يُرَدُّ إِلَيْهِ</a>
+            <a href="haa-meem.html" class="box"><i class="fas fa-book"></i> حم</a>
+            <!-- Qala Fama Khatbukum -->
+            <a href="qala-fama-khatbukum.html" class="box"><i class="fas fa-book"></i> خَطْبُكُمْ فَمَا قَال</a>
+            <!-- Qadd Sami Allah -->
+            <a href="qadd-sami-allah.html" class="box"><i class="fas fa-book"></i> اللَّهُ سَمِعَ قَدْ</a>
+            <!-- Tabarakallazi -->
+            <a href="tabarakallazi.html" class="box"><i class="fas fa-book"></i> الَّذِي تَبَارَكَ</a>
+            <!-- Amma Yatasa'aloon -->
+            <a href="amma-yatasaloon.html" class="box"><i class="fas fa-book"></i> يَتَسَاءَلُونَ عَمَّ</a>
+        </div>
+    </div>
+</body>
+</html>
