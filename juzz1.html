@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surah Al-Fatiha and Al-Baqarah</title>
+    <style>
+        /* General reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Amiri', serif; /* Quranic style Arabic font */
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            background-color: rgba(255, 223, 186, 0.9); /* Light yellow transparent */
+            background-image: url('https://i.imgur.com/w9JUmkX.png'); /* Quranic texture background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Content container */
+        .content {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7); /* Light white overlay */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            overflow-y: auto;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .bismillah {
+            font-size: 2.5rem;
+            color: black;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7); /* Light white overlay */
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .surah {
+            font-size: 2rem;
+            color: black;
+            line-height: 1.8;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .surah-heading {
+            font-size: 2.5rem;
+            color: black;
+            font-weight: bold;
+            margin-top: 30px;
+            text-decoration: underline;
+        }
+
+        /* Import Arabic font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+        /* Mobile responsiveness */
+        @media (max-width: 1024px) {
+            .content {
+                padding: 15px;
+                height: auto; /* Allow the content to be scrollable when necessary */
+            }
+
+            .bismillah {
+                font-size: 2.3rem;
+                padding: 12px;
+            }
+
+            .surah {
+                font-size: 1.9rem;
+                padding: 12px;
+            }
+
+            .surah-heading {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
+            .bismillah {
+                font-size: 2rem;
+                padding: 10px;
+            }
+
+            .surah {
+                font-size: 1.7rem;
+                padding: 10px;
+            }
+
+            .surah-heading {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                padding: 5px;
+            }
+
+            .bismillah {
+                font-size: 1.7rem;
+                padding: 8px;
+            }
+
+            .surah {
+                font-size: 1.5rem;
+                padding: 8px;
+            }
+
+            .surah-heading {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Surah Al-Fatiha Content -->
+        <div class="surah">
+            <p class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+            <p class="surah-heading">(1) الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+            <p>(2) الرَّحْمَنِ الرَّحِيمِ</p>
+            <p>(3) مَالِكِ يَوْمِ الدِّينِ</p>
+            <p>(4) إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p>
+            <p>(5) اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</p>
+            <p>(6) صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</p>
+        </div>
+
+        <!-- Surah Al-Baqarah Content -->
+        <div class="surah">
+            <p class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+            <p class="surah-heading">(1) الم</p>
+            <p>(2) ذَلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِلْمُتَّقِينَ</p>
+            <p>(3) الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ وَمِمَّا رَزَقْنَاهُمْ يُنْفِقُونَ</p>
+            <p>(4) وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنْزِلَ إِلَيْكَ وَمَا أُنْزِلَ مِنْ قَبْلِكَ وَبِالْآخِرَةِ هُمْ يُوقِنُونَ</p>
+            <p>(5) أُولَئِكَ عَلَى هُدًى مِنْ رَبِّهِمْ وَأُولَئِكَ هُمُ الْمُفْلِحُونَ</p>
+        </div>
+    </div>
+</body>
+</html>
